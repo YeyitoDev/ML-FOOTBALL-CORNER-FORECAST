@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Data files (large files)
+data/fixtures/
+data/llm-inputs/
+data/llm-outputs/
+data/odds/
+data/predictions/
+data/team_stats/
+data/models/*.pkl
+data/models/*.h5
+data/models/*.json
+data/output/*.csv
+
+# Keep structure files
+!data/models/.gitkeep
+!data/output/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Temporary files
+tmp/
+temp/
+ML-FOOTBALL-CORNERS-FORECAST/

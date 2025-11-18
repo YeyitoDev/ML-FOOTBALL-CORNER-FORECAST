@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  football-prediction:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: football-prediction-model
+    volumes:
+      # Mount data directories to persist results
+      - ./data:/app/data
+      - ./src:/app/src
+    environment:
+      - PYTHONUNBUFFERED=1
+      - START_DATE=2025-01-01
+      - END_DATE=2025-11-18
+    command: >
+      sh -c "
+        echo '🚀 Starting Football Prediction Pipeline...' &&
+        python src/main.py &&
+        echo '🎯 Training Corners Prediction Model...' &&
+        python src/train_model.py &&
+        echo '✅ Pipeline Complete!'
+      "
