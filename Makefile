@@ -33,7 +33,12 @@ train: run
 	./venv/bin/python src/train_model.py
 	@echo "✅ Model training complete!"
 
-all: setup run train
+evaluate: run
+	@echo "🤖 Evaluating ML models..."
+	./venv/bin/python src/evaluate_model.py
+	@echo "✅ Model evaluation complete!"
+
+all: setup run train evaluate
 	@echo "✅ Complete pipeline finished!"
 
 docker-build:
